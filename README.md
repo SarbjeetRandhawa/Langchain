@@ -14,7 +14,7 @@
   &nbsp;&nbsp;&nbsp; &bull; Dynamic Few-shot PromptTemplate<br>
   </details>
 - <details>
-  <summary>➡️ Phase 4 - Output Parsers</summary>
+  <summary>✅ Phase 4 - Output Parsers</summary>
   <br>
   &nbsp;&nbsp;&nbsp; &bull; StrOutputParser ⭐<br>
   &nbsp;&nbsp;&nbsp; &bull; JsonOutputParser ⭐⭐⭐⭐⭐<br>
