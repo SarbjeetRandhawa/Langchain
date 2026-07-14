@@ -2,19 +2,29 @@
 
 - ✅ Phase 1 - Why LangChain Exists
 - ✅ Phase 2 - Core Components & Runnables
-- ✅ Phase 3 - Prompt Templates
+- <details>
+  <summary>✅ Phase 3 - Prompt Templates</summary>
+  <br>
+  &nbsp;&nbsp;&nbsp; - PromptTemplate<br>
+  &nbsp;&nbsp;&nbsp; - ChatPromptTemplate<br>
+  &nbsp;&nbsp;&nbsp; - Messages<br>
+  &nbsp;&nbsp;&nbsp; - MessagesPlaceholder<br>
+  &nbsp;&nbsp;&nbsp; - Partial Formatting<br>
+  &nbsp;&nbsp;&nbsp; - FewShotPromptTemplate<br>
+  &nbsp;&nbsp;&nbsp; - Dynamic Few-shot PromptTemplate<br>
+  </details>
 - <details>
   <summary>➡️ Phase 4 - Output Parsers</summary>
   <br>
-  &nbsp;&nbsp;&nbsp;├── StrOutputParser ⭐<br>
-  &nbsp;&nbsp;&nbsp;├── JsonOutputParser ⭐⭐⭐⭐⭐<br>
-  &nbsp;&nbsp;&nbsp;├── PydanticOutputParser ⭐⭐⭐⭐⭐<br>
-  &nbsp;&nbsp;&nbsp;├── OutputFixingParser ⭐⭐⭐⭐<br>
-  &nbsp;&nbsp;&nbsp;├── RetryOutputParser ⭐⭐⭐⭐<br>
-  &nbsp;&nbsp;&nbsp;├── CommaSeparatedListOutputParser<br>
-  &nbsp;&nbsp;&nbsp;├── MarkdownListOutputParser<br>
-  &nbsp;&nbsp;&nbsp;├── NumberedListOutputParser<br>
-  &nbsp;&nbsp;&nbsp;└── Custom Output Parsers
+  &nbsp;&nbsp;&nbsp; - StrOutputParser ⭐<br>
+  &nbsp;&nbsp;&nbsp; - JsonOutputParser ⭐⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp; - PydanticOutputParser ⭐⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp; - OutputFixingParser ⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp; - RetryOutputParser ⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp; - CommaSeparatedListOutputParser<br>
+  &nbsp;&nbsp;&nbsp; - MarkdownListOutputParser<br>
+  &nbsp;&nbsp;&nbsp; - NumberedListOutputParser<br>
+  &nbsp;&nbsp;&nbsp; - Custom Output Parsers
   </details>
 - ➡️ Phase 5 - LCEL ⭐⭐⭐⭐⭐
 - ➡️ Phase 6 - Chains
