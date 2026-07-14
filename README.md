@@ -4,18 +4,15 @@
 - ✅ Phase 2 - Core Components & Runnables
 - ✅ Phase 3 - Prompt Templates
 - ➡️ Phase 4 - Output Parsers
-  ```text
-  │
-  ├── StrOutputParser ⭐
-  ├── JsonOutputParser ⭐⭐⭐⭐⭐
-  ├── PydanticOutputParser ⭐⭐⭐⭐⭐
-  ├── OutputFixingParser ⭐⭐⭐⭐
-  ├── RetryOutputParser ⭐⭐⭐⭐
-  ├── CommaSeparatedListOutputParser
-  ├── MarkdownListOutputParser
-  ├── NumberedListOutputParser
-  └── Custom Output Parsers
-  ```
+        ├── StrOutputParser ⭐
+        ├── JsonOutputParser ⭐⭐⭐⭐⭐
+        ├── PydanticOutputParser ⭐⭐⭐⭐⭐
+        ├── OutputFixingParser ⭐⭐⭐⭐
+        ├── RetryOutputParser ⭐⭐⭐⭐
+        ├── CommaSeparatedListOutputParser
+        ├── MarkdownListOutputParser
+        ├── NumberedListOutputParser
+        └── Custom Output Parsers
 - ➡️ Phase 5 - LCEL ⭐⭐⭐⭐⭐
 - ➡️ Phase 6 - Chains
 - ➡️ Phase 7 - Document Loaders
