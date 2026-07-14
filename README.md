@@ -3,7 +3,19 @@
 - ✅ Phase 1 - Why LangChain Exists
 - ✅ Phase 2 - Core Components & Runnables
 - ✅ Phase 3 - Prompt Templates
-- ➡️ Phase 4 - Output Parsers<br>&nbsp;&nbsp;&nbsp;├── StrOutputParser ⭐<br>&nbsp;&nbsp;&nbsp;├── JsonOutputParser ⭐⭐⭐⭐⭐<br>&nbsp;&nbsp;&nbsp;├── PydanticOutputParser ⭐⭐⭐⭐⭐<br>&nbsp;&nbsp;&nbsp;├── OutputFixingParser ⭐⭐⭐⭐<br>&nbsp;&nbsp;&nbsp;├── RetryOutputParser ⭐⭐⭐⭐<br>&nbsp;&nbsp;&nbsp;├── CommaSeparatedListOutputParser<br>&nbsp;&nbsp;&nbsp;├── MarkdownListOutputParser<br>&nbsp;&nbsp;&nbsp;├── NumberedListOutputParser<br>&nbsp;&nbsp;&nbsp;└── Custom Output Parsers
+- <details>
+  <summary>➡️ Phase 4 - Output Parsers</summary>
+  <br>
+  &nbsp;&nbsp;&nbsp;├── StrOutputParser ⭐<br>
+  &nbsp;&nbsp;&nbsp;├── JsonOutputParser ⭐⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp;├── PydanticOutputParser ⭐⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp;├── OutputFixingParser ⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp;├── RetryOutputParser ⭐⭐⭐⭐<br>
+  &nbsp;&nbsp;&nbsp;├── CommaSeparatedListOutputParser<br>
+  &nbsp;&nbsp;&nbsp;├── MarkdownListOutputParser<br>
+  &nbsp;&nbsp;&nbsp;├── NumberedListOutputParser<br>
+  &nbsp;&nbsp;&nbsp;└── Custom Output Parsers
+  </details>
 - ➡️ Phase 5 - LCEL ⭐⭐⭐⭐⭐
 - ➡️ Phase 6 - Chains
 - ➡️ Phase 7 - Document Loaders
