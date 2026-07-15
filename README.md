@@ -150,77 +150,77 @@
   <summary>✅ Phase 8 - Text Splitters</summary>
   <br>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Introduction to Text Splitters ✅</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> Text Splitters break large documents into smaller chunks so they fit into the context window of LLMs. This is a critical step for RAG (Retrieval-Augmented Generation) to ensure the LLM receives highly relevant snippets instead of entire books.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+ &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> CharacterTextSplitter</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> The simplest splitter. It splits text based on a single character (usually a newline `\n\n`) and measures chunk size by the number of characters.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> RecursiveCharacterTextSplitter ⭐⭐⭐⭐⭐</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> The recommended splitter for generic text. It tries to split on paragraphs (`\n\n`), then sentences (`\n`), then words (` `), and finally characters (`""`) to keep semantically related pieces of text together as much as possible while strictly enforcing the chunk size.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> TokenTextSplitter</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> Splits text by token count rather than character count, ensuring chunks fit perfectly into LLM context windows (since LLMs charge and limit based on tokens, not characters). Often uses Tiktoken under the hood.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Markdown & HTML Splitters</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> These splitters understand document structure. `MarkdownHeaderTextSplitter` splits based on headers (e.g., `#`, `##`) and adds the header info to the chunk's metadata. `HTMLHeaderTextSplitter` does the same for `<h1>`, `<h2>`, etc.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Code Splitters</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> `PythonCodeTextSplitter` (and others) understand programming language syntax. They split along functions, classes, and logical code blocks instead of just newlines, which prevents breaking a function in half.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Semantic Chunking ⭐⭐⭐⭐⭐</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> An advanced method that uses embedding models to measure the similarity between sentences. It groups sentences into chunks based on semantic meaning, creating a new chunk only when the topic naturally shifts.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Parent-Child Chunking ⭐⭐⭐⭐⭐</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> (Also known as Auto-merging Retriever). You split documents into small "child" chunks for precise retrieval, but link them to a larger "parent" chunk. If enough children are retrieved, the LLM is fed the entire parent chunk to provide broader context.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Contextual Chunking</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> Involves appending global context (like the document title or a summary of the whole page) to every single chunk so that isolated chunks don't lose their underlying meaning during retrieval.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Choosing Chunk Size & Overlap ⭐⭐⭐⭐⭐</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> Chunk size dictates how much info is in a chunk (e.g., 1000 characters). Chunk overlap dictates how much the end of chunk A overlaps with the beginning of chunk B (e.g., 200 characters). Overlap is crucial to ensure concepts at the boundary of a chunk aren't cut in half.
     </div>
   </details>
   
-  <details style="margin-left: 20px;">
+  &nbsp;&nbsp;&nbsp;<details style="margin-left: 20px;">
     <summary> Best Practices & Common Mistakes</summary>
     <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> Common mistakes include setting overlap to 0 (losing context at boundaries), using CharacterTextSplitter for complex documents, or not testing whether the chunk size actually captures enough information for the LLM to answer questions.
