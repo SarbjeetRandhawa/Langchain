@@ -145,6 +145,7 @@
     <li><b>Custom Loaders:</b> For proprietary formats or databases, you can build custom loaders by subclassing `BaseLoader` and defining how to yield `Document` objects.</li>
   </ul>
   </details>
+  
 - ➡️ Phase 8 - Text Splitters
 - ➡️ Phase 9 - Embeddings
 - ➡️ Phase 10 - Vector Stores
