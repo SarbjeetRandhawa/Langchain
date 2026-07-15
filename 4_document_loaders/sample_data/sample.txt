@@ -1,0 +1,2 @@
+Hello! This is a sample text file.
+It contains some basic information used for testing the TextLoader in LangChain.

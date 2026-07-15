@@ -146,7 +146,137 @@
   </ul>
   </details>
   
-- ➡️ Phase 8 - Text Splitters
+- <details>
+  <summary>✅ Phase 8 - Text Splitters</summary>
+  <br>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Introduction to Text Splitters ✅</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Text Splitters break large documents into smaller chunks so they fit into the context window of LLMs. This is a critical step for RAG (Retrieval-Augmented Generation) to ensure the LLM receives highly relevant snippets instead of entire books.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; CharacterTextSplitter</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The simplest splitter. It splits text based on a single character (usually a newline `\n\n`) and measures chunk size by the number of characters.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; RecursiveCharacterTextSplitter ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The recommended splitter for generic text. It tries to split on paragraphs (`\n\n`), then sentences (`\n`), then words (` `), and finally characters (`""`) to keep semantically related pieces of text together as much as possible while strictly enforcing the chunk size.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; TokenTextSplitter</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Splits text by token count rather than character count, ensuring chunks fit perfectly into LLM context windows (since LLMs charge and limit based on tokens, not characters). Often uses Tiktoken under the hood.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Markdown & HTML Splitters</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> These splitters understand document structure. `MarkdownHeaderTextSplitter` splits based on headers (e.g., `#`, `##`) and adds the header info to the chunk's metadata. `HTMLHeaderTextSplitter` does the same for `<h1>`, `<h2>`, etc.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Code Splitters</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> `PythonCodeTextSplitter` (and others) understand programming language syntax. They split along functions, classes, and logical code blocks instead of just newlines, which prevents breaking a function in half.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Semantic Chunking ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> An advanced method that uses embedding models to measure the similarity between sentences. It groups sentences into chunks based on semantic meaning, creating a new chunk only when the topic naturally shifts.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Parent-Child Chunking ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> (Also known as Auto-merging Retriever). You split documents into small "child" chunks for precise retrieval, but link them to a larger "parent" chunk. If enough children are retrieved, the LLM is fed the entire parent chunk to provide broader context.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Contextual Chunking</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Involves appending global context (like the document title or a summary of the whole page) to every single chunk so that isolated chunks don't lose their underlying meaning during retrieval.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Choosing Chunk Size & Overlap ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Chunk size dictates how much info is in a chunk (e.g., 1000 characters). Chunk overlap dictates how much the end of chunk A overlaps with the beginning of chunk B (e.g., 200 characters). Overlap is crucial to ensure concepts at the boundary of a chunk aren't cut in half.
+    </div>
+  </details>
+  
+  <details style="margin-left: 20px;">
+    <summary>&bull; Best Practices & Common Mistakes</summary>
+    <div style="margin-left: 20px; margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Common mistakes include setting overlap to 0 (losing context at boundaries), using CharacterTextSplitter for complex documents, or not testing whether the chunk size actually captures enough information for the LLM to answer questions.
+    </div>
+  </details>
+  <br>
+  &nbsp;&nbsp;&nbsp; <b>Common Types of Text Splitters:</b> LangChain provides several strategies:<br><br>
+  
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="padding: 8px; border: 1px solid #ddd;">Splitter</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Splits By</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">CharacterTextSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Fixed characters</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Simple text</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">RecursiveCharacterTextSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Multiple separators</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">⭐ Most common</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">TokenTextSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Tokens</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Token-aware chunking</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">MarkdownHeaderTextSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Markdown headings</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Markdown docs</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">HTMLHeaderTextSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">HTML tags</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Websites</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">PythonCodeTextSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Python syntax</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Source code</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">RecursiveJsonSplitter</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">JSON structure</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">JSON documents</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </details>
 - ➡️ Phase 9 - Embeddings
 - ➡️ Phase 10 - Vector Stores
 - ➡️ Phase 11 - Retrievers

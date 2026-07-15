@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "text": "This is the first document.",
+    "metadata": {"source": "json_loader_test"}
+  },
+  {
+    "id": 2,
+    "text": "This is the second document.",
+    "metadata": {"source": "json_loader_test"}
+  }
+]
