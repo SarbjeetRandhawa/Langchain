@@ -59,10 +59,13 @@
   &nbsp;&nbsp;&nbsp; &bull; Lesson 9 → Building Complete AI Pipelines<br>
   &nbsp;&nbsp;&nbsp; &bull; Lesson 10 → Production Patterns<br>
   <br>
-  &nbsp;&nbsp;&nbsp; <b>Theory:</b><br>
-  &nbsp;&nbsp;&nbsp; &bull; <b>Execution Methods:</b> LCEL runnables support various execution methods. `invoke()` is used for single inputs, returning the final output. `batch()` processes a list of inputs concurrently, optimizing for speed. `stream()` yields chunks of the output as soon as they are available, crucial for building responsive UIs.<br>
-  &nbsp;&nbsp;&nbsp; &bull; <b>Building Pipelines:</b> Combining different LCEL components (prompts, models, parsers, runnables) allows you to build complex AI pipelines. You can seamlessly chain multiple steps, routing inputs based on conditions (RunnableBranch), or running tasks concurrently (RunnableParallel).<br>
-  &nbsp;&nbsp;&nbsp; &bull; <b>Production Patterns:</b> In production, LCEL simplifies adding fallback models, retry logic (using RetryOutputParser), and observability. Because of its standard interface, integrating LangSmith for tracing and debugging comes almost for free.
+  <br>
+  &nbsp;&nbsp;&nbsp; <b>Theory:</b>
+  <ul style="padding-left: 40px;">
+    <li style="margin-bottom: 10px;"><b>Execution Methods:</b> LCEL runnables support various execution methods. `invoke()` is used for single inputs, returning the final output. `batch()` processes a list of inputs concurrently, optimizing for speed. `stream()` yields chunks of the output as soon as they are available, crucial for building responsive UIs.</li>
+    <li style="margin-bottom: 10px;"><b>Building Pipelines:</b> Combining different LCEL components (prompts, models, parsers, runnables) allows you to build complex AI pipelines. You can seamlessly chain multiple steps, routing inputs based on conditions (RunnableBranch), or running tasks concurrently (RunnableParallel).</li>
+    <li><b>Production Patterns:</b> In production, LCEL simplifies adding fallback models, retry logic (using RetryOutputParser), and observability. Because of its standard interface, integrating LangSmith for tracing and debugging comes almost for free.</li>
+  </ul>
   </details>
 - ➡️ Phase 6 - Chains
 - ➡️ Phase 7 - Document Loaders
