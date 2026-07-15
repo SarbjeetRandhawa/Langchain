@@ -48,16 +48,16 @@
 - <details>
   <summary>✅ Phase 5 - LCEL ⭐⭐⭐⭐⭐</summary>
   <br>
-  &nbsp;&nbsp;&nbsp; &bull; ✅ What is LCEL?<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 2 → RunnableSequence (the `|` operator)<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 3 → RunnableLambda<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 4 → RunnablePassthrough<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 5 → RunnableParallel<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 6 → RunnableAssign<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 7 → RunnableBranch<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 8 → LCEL Execution (invoke, batch, stream)<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 9 → Building Complete AI Pipelines<br>
-  &nbsp;&nbsp;&nbsp; &bull; Lesson 10 → Production Patterns<br>
+  &nbsp;&nbsp;&nbsp; &bull;  What is LCEL?<br>
+  &nbsp;&nbsp;&nbsp; &bull;  RunnableSequence (the `|` operator)<br>
+  &nbsp;&nbsp;&nbsp; &bull;  RunnableLambda<br>
+  &nbsp;&nbsp;&nbsp; &bull;  RunnablePassthrough<br>
+  &nbsp;&nbsp;&nbsp; &bull;  RunnableParallel<br>
+  &nbsp;&nbsp;&nbsp; &bull;  RunnableAssign<br>
+  &nbsp;&nbsp;&nbsp; &bull;  RunnableBranch<br>
+  &nbsp;&nbsp;&nbsp; &bull;  LCEL Execution (invoke, batch, stream)<br>
+  &nbsp;&nbsp;&nbsp; &bull;  Building Complete AI Pipelines<br>
+  &nbsp;&nbsp;&nbsp; &bull;  Production Patterns<br>
   <br>
   <br>
   &nbsp;&nbsp;&nbsp; <b>Theory:</b>
