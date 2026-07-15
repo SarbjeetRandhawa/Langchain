@@ -59,7 +59,6 @@
   &nbsp;&nbsp;&nbsp; &bull;  Building Complete AI Pipelines<br>
   &nbsp;&nbsp;&nbsp; &bull;  Production Patterns<br>
   <br>
-  <br>
   &nbsp;&nbsp;&nbsp; <b>Theory:</b>
   <ul style="padding-left: 40px;">
     <li style="margin-bottom: 10px;"><b>Execution Methods:</b> LCEL runnables support various execution methods. `invoke()` is used for single inputs, returning the final output. `batch()` processes a list of inputs concurrently, optimizing for speed. `stream()` yields chunks of the output as soon as they are available, crucial for building responsive UIs.</li>
@@ -67,7 +66,58 @@
     <li><b>Production Patterns:</b> In production, LCEL simplifies adding fallback models, retry logic (using RetryOutputParser), and observability. Because of its standard interface, integrating LangSmith for tracing and debugging comes almost for free.</li>
   </ul>
   </details>
-- ➡️ Phase 6 - Chains
+- <details>
+  <summary>✅ Phase 6 - Chains</summary>
+  <br>
+  
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th style="padding: 8px; border: 1px solid #ddd;">Chain</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Status</th>
+        <th style="padding: 8px; border: 1px solid #ddd;">Modern Equivalent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">LLMChain</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><code>prompt | llm | parser</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">ConversationChain</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Prompt + Memory + LCEL</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">SequentialChain</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><code>chain1 | chain2</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">RouterChain</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><code>RunnableBranch</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">TransformChain</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><code>RunnableLambda</code></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">RetrievalQA</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Retriever + Prompt + LLM</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">ConversationalRetrievalChain</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Deprecated</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">Retriever + Memory + Prompt</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </details>
 - ➡️ Phase 7 - Document Loaders
 - ➡️ Phase 8 - Text Splitters
 - ➡️ Phase 9 - Embeddings
