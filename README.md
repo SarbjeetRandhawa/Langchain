@@ -146,7 +146,8 @@
   </ul>
   </details>
   
-<det  <div style="margin-left: 40px;">
+<details>
+  <div style="margin-left: 40px;">
   <details>
     <summary> Introduction to Text Splitters ✅</summary>
     <div style="margin-top: 5px; margin-bottom: 10px;">
