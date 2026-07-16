@@ -122,7 +122,7 @@
 <details>
   <summary>✅ Phase 7 - Document Loaders</summary>
   <br>
-  &nbsp;&nbsp;&nbsp; &bull; Introduction to Document Loaders ✅<br>
+  &nbsp;&nbsp;&nbsp; &bull; Introduction to Document Loaders<br>
   &nbsp;&nbsp;&nbsp; &bull; TextLoader<br>
   &nbsp;&nbsp;&nbsp; &bull; PyPDFLoader<br>
   &nbsp;&nbsp;&nbsp; &bull; PyMuPDFLoader<br>
@@ -151,7 +151,7 @@
   <br>
   <dl><dd>
   <details>
-    <summary> Introduction to Text Splitters ✅</summary>
+    <summary> Introduction to Text Splitters</summary>
     <div style="margin-top: 5px; margin-bottom: 10px;">
       <b>Theory:</b> Text Splitters break large documents into smaller chunks so they fit into the context window of LLMs. This is a critical step for RAG (Retrieval-Augmented Generation) to ensure the LLM receives highly relevant snippets instead of entire books.
     </div>
@@ -302,8 +302,102 @@
 
 </details>
 
-- ➡️ Phase 9 - Embeddings
-- ➡️ Phase 10 - Vector Stores
+<details>
+  <summary>✅ Phase 9 - Embeddings</summary>
+  <br>
+  <dl><dd>
+    Lesson 1 Introduction to Embeddings<br><br>
+    Lesson 2 → How Embeddings Are Created (Training Process)<br><br>
+    Lesson 3 → High-Dimensional Vector Space<br><br>
+    Lesson 4 → Similarity Metrics<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Cosine Similarity ⭐⭐⭐⭐⭐<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Dot Product<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Euclidean Distance<br><br>
+    Lesson 5 → Popular Embedding Models<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; BGE<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; E5<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; OpenAI<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&bull; Sentence Transformers<br><br>
+    Lesson 6 → Choosing the Right Embedding Model<br><br>
+    Lesson 7 → Embedding Pitfalls & Best Practices<br><br>
+    Lesson 8 → LangChain Embedding Interfaces (Coding)<br>
+  </dd></dl>
+</details>
+<details>
+  <summary>✅ Phase 10 - Vector Stores</summary>
+  <br>
+  <dl><dd>
+    <details>
+      <summary> What is a Vector Store</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> A specialized database designed to store, manage, and query high-dimensional vectors (embeddings) efficiently. They allow for fast similarity search across massive datasets.
+      </div>
+    </details>
+    
+    <details>
+      <summary> Why SQL Isn't Enough</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> SQL and traditional relational databases are built for exact matches (e.g., `WHERE author = 'John'`). Vector databases are built for similarity searches (finding the closest points in space), which traditional databases struggle to do efficiently at scale without specialized extensions.
+      </div>
+    </details>
+    
+    <details>
+      <summary> Exact Search vs ANN</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> Exact Search (k-NN) compares a query against every single vector in the database. It's 100% accurate but too slow for millions of records. ANN (Approximate Nearest Neighbors) trades a tiny bit of accuracy for massive speed gains by organizing vectors into optimized, easily searchable structures.
+      </div>
+    </details>
+    
+    <details>
+      <summary> HNSW ⭐⭐⭐⭐⭐</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> Hierarchical Navigable Small World. The most popular and state-of-the-art ANN algorithm. It builds a multi-layered graph where top layers have long links for fast zooming in, and bottom layers have short links for fine-tuning the search. It is extremely fast and accurate.
+      </div>
+    </details>
+    
+    <details>
+      <summary> FAISS</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> Facebook AI Similarity Search. A powerful, low-level library for efficient similarity search and clustering. It typically runs locally in-memory, making it excellent for prototyping or small-to-medium datasets.
+      </div>
+    </details>
+    
+    <details>
+      <summary> Chroma</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> An open-source, AI-native embedding database. It is incredibly popular for local development and simple RAG projects because it is trivial to set up and can run completely locally.
+      </div>
+    </details>
+    
+    <details>
+      <summary> Qdrant ⭐⭐⭐⭐⭐</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> A high-performance, open-source vector search engine written in Rust. It offers production-grade features, excellent horizontal scaling, and advanced payload (metadata) filtering. Highly recommended for robust production applications.
+      </div>
+    </details>
+    
+    <details>
+      <summary> Pinecone</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> A fully managed, cloud-native vector database. It is closed-source but extremely easy to use for production since you don't have to manage any infrastructure yourself.
+      </div>
+    </details>
+    
+    <details>
+      <summary> Metadata Filtering</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> Vector databases allow you to attach metadata (like date, author, or category) to your embeddings. During retrieval, you can filter by this metadata (e.g., "Find similar documents BUT only from 2024") to drastically improve both accuracy and query speed.
+      </div>
+    </details>
+    
+    <details>
+      <summary> LangChain Vector Stores</summary>
+      <div style="margin-top: 5px; margin-bottom: 10px;">
+        <b>Theory:</b> LangChain provides a unified `VectorStore` interface. This means you can swap out FAISS, Qdrant, or Pinecone by just changing one line of code during initialization, while the rest of your retrieval logic (`.similarity_search()`) stays exactly the same.
+      </div>
+    </details>
+  </dd></dl>
+</details>
 - ➡️ Phase 11 - Retrievers
 - ➡️ Phase 12 - Memory
 - ➡️ Phase 13 - Tools
