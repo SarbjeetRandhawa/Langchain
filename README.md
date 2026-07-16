@@ -399,8 +399,177 @@
   </dd></dl>
 </details>
 
-- ➡️ Phase 11 - Retrievers
-- ➡️ Phase 12 - Memory
+<details>
+  <summary>✅ Phase 11 - Retrievers</summary>
+  <br>
+  <dl><dd>
+  <details>
+    <summary> What is a Retriever?</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> A Retriever is an interface that returns documents given an unstructured query. It is more general than a vector store. While a vector store is a database that can retrieve vectors, a Retriever can be anything (e.g., a Wikipedia search, an API call) that takes in a string and returns a list of relevant Documents.
+    </div>
+  </details>
+
+  <details>
+    <summary> VectorStoreRetriever ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The most common type of retriever in LangChain. It is a lightweight wrapper around a Vector Store (like Qdrant or Pinecone) that conforms to the Retriever interface. Under the hood, it takes your query, embeds it using an embedding model, and performs a similarity search in the underlying vector database to fetch the most relevant chunks.
+    </div>
+  </details>
+
+  <details>
+    <summary> Similarity Search</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The standard method used by VectorStoreRetrievers. It simply measures the mathematical distance (like Cosine Similarity) between the query vector and document vectors, returning the top K closest matches.
+    </div>
+  </details>
+  
+  <details>
+    <summary> Similarity Score Threshold</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> A retrieval method that lets you set a minimum similarity score. Instead of always returning a fixed number of documents (like top 4), it returns all documents that score above the threshold (e.g., > 0.8), ensuring that irrelevant documents aren't passed to the LLM.
+    </div>
+  </details>
+
+  <details>
+    <summary> MMR Retriever</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Maximum Marginal Relevance (MMR). It tries to optimize for both relevance to the query AND diversity among the retrieved documents. This prevents returning 5 documents that all say the exact same thing, ensuring a wider context is captured.
+    </div>
+  </details>
+
+  <details>
+    <summary> MultiQuery Retriever ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> An advanced retriever that uses an LLM to generate multiple variations of the user's original query. It then performs a retrieval for *each* variation, combines the results, and removes duplicates. This is incredibly powerful because it overcomes the limitations of distance-based search where a slightly differently worded query might miss the right document.
+    </div>
+  </details>
+
+  <details>
+    <summary> Contextual Compression Retriever ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Sometimes relevant documents contain a lot of useless filler text that wastes the LLM's context window. This retriever solves that by using an LLM (or a smaller model) to "compress" or filter the retrieved documents, extracting only the exact sentences or paragraphs that answer the query before passing them to the final LLM.
+    </div>
+  </details>
+
+  <details>
+    <summary> Parent Document Retriever ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> One of the most effective retrieval strategies. It splits documents into small "child" chunks for highly accurate, precise similarity search. However, instead of passing the small child chunk to the LLM (which might lack surrounding context), it retrieves the larger "parent" chunk that the child belongs to. This gives you the best of both worlds: the precision of small chunks and the rich context of large chunks.
+    </div>
+  </details>
+
+  <details>
+    <summary> Ensemble Retriever (Hybrid Search) ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Combines the results of multiple different retrievers. The most common pattern is "Hybrid Search", which pairs a sparse keyword-based retriever (like BM25, which looks for exact word matches) with a dense vector retriever (which looks for semantic meaning). It then uses algorithms like Reciprocal Rank Fusion (RRF) to re-rank the combined results, providing vastly superior accuracy over using either method alone.
+    </div>
+  </details>
+
+  <details>
+    <summary> Self-Query Retriever ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> A very smart retriever that uses an LLM to parse the user's natural language query into two parts: a semantic search string and a structured metadata filter. For example, if the user asks "What are some good sci-fi movies from 2023?", the LLM extracts "good sci-fi movies" for the vector search and creates a strict filter `year == 2023` for the metadata. This dramatically improves retrieval accuracy when dealing with structured attributes.
+    </div>
+  </details>
+
+  <details>
+    <summary> Time-Weighted Retriever</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> A retriever that combines semantic similarity with recency. Documents gradually "decay" in score over time, meaning newer documents are favored over older ones unless the older document is significantly more relevant.
+    </div>
+  </details>
+
+  <details>
+    <summary> MultiVector Retriever</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Allows you to store multiple vectors per document. For example, you can create vectors for the document's summary, its title, and its sub-sections, but all of them point back to the same full document during retrieval.
+    </div>
+  </details>
+  </dd></dl>
+</details>
+<details>
+  <summary>✅ Phase 12 - Memory</summary>
+  <br>
+  <dl><dd>
+  <details>
+    <summary> What is Memory?</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Memory is the ability of an LLM system to remember previous interactions. By default, LLMs are stateless; they don't remember what you said in the previous prompt. Memory components in LangChain intercept user inputs and model outputs, storing them so they can be injected into the context of future conversations.
+    </div>
+  </details>
+
+  <details>
+    <summary> Chat Message History ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The core abstraction that stores the actual sequence of messages (Human, AI, System). It is the raw database of a conversation. While you can store this in memory for testing, in production you typically back this with a database (like Redis, Postgres, or MongoDB) using integrations like `RedisChatMessageHistory` so conversations survive server restarts.
+    </div>
+  </details>
+
+  <details>
+    <summary> ConversationBufferMemory</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The simplest form of memory. It just stores a raw, unedited list of all chat messages and passes the entire history into the prompt every time.
+    </div>
+  </details>
+
+  <details>
+    <summary> ConversationBufferWindowMemory</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Keeps a sliding window of the last 'K' messages. Older messages get dropped, preventing the prompt from exceeding the token limit as the conversation grows.
+    </div>
+  </details>
+
+  <details>
+    <summary> ConversationTokenBufferMemory</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Similar to the window memory, but instead of keeping the last K messages, it keeps the maximum number of messages that fit under a specific token count threshold.
+    </div>
+  </details>
+
+  <details>
+    <summary> ConversationSummaryMemory ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Instead of storing the exact raw messages (which quickly eats up tokens), this uses an LLM to actively summarize the conversation as it happens. The summarized text is injected into the prompt as context. This is highly efficient for long-running conversations where you only need the broad strokes of what was discussed, rather than word-for-word accuracy.
+    </div>
+  </details>
+
+  <details>
+    <summary> ConversationSummaryBufferMemory ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> The ultimate hybrid memory for complex chatbots. It keeps the exact raw text of the most recent interactions (the buffer) up to a certain token limit, and once that limit is reached, it summarizes the oldest messages. This gives the LLM perfect short-term memory (for the recent context) and summarized long-term memory, optimizing both token usage and conversational accuracy.
+    </div>
+  </details>
+
+  <details>
+    <summary> VectorStoreRetrieverMemory</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Treats memory like a search problem. It stores past conversation turns in a vector database and retrieves the most semantically relevant past messages for the current turn, rather than just the most recent ones.
+    </div>
+  </details>
+
+  <details>
+    <summary> EntityMemory</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> Automatically extracts entities (names, places, concepts) from the conversation and builds a mini knowledge graph or dictionary about those entities, allowing the LLM to recall specific facts about a user.
+    </div>
+  </details>
+
+  <details>
+    <summary> Memory in LCEL</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> In LCEL, memory is often handled using `RunnableWithMessageHistory`, which automatically fetches historical messages for a given session ID and appends the new interaction to the database.
+    </div>
+  </details>
+
+  <details>
+    <summary> LangGraph Memory (Modern Approach) ⭐⭐⭐⭐⭐</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <b>Theory:</b> As LangChain evolves, standard memory classes (like ConversationBufferMemory) are being replaced by LangGraph. In LangGraph, memory is naturally managed through "state". By using a `checkpointer` (like SqliteSaver), LangGraph automatically persists the entire state of an agent (including messages) across different turns, enabling powerful concepts like time-traveling, pausing, and resuming long-running agents without needing specialized memory classes.
+    </div>
+  </details>
+  </dd></dl>
+</details>
 - ➡️ Phase 13 - Tools
 - ➡️ Phase 14 - Agents
 - ➡️ Phase 15 - Callbacks
