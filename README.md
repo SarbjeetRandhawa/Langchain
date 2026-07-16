@@ -149,7 +149,7 @@
 <details>
   <summary>✅ Phase 8 - Text Splitters</summary>
   <br>
-  <div style="margin-left: 40px;">
+  <dl><dd>
   <details>
     <summary> Introduction to Text Splitters ✅</summary>
     <div style="margin-top: 5px; margin-bottom: 10px;">
@@ -249,7 +249,7 @@
       <b>Theory:</b> Common mistakes include setting overlap to 0 (losing context at boundaries), using CharacterTextSplitter for complex documents, or not testing whether the chunk size actually captures enough information for the LLM to answer questions.
     </div>
   </details>
-  </div>
+  </dd></dl>
   <br>
   &nbsp;&nbsp;&nbsp; <b>Common Types of Text Splitters:</b> LangChain provides several strategies:<br><br>
   
