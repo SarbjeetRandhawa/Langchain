@@ -147,6 +147,8 @@
   </details>
   
 <details>
+  <summary>✅ Phase 8 - Text Splitters</summary>
+  <br>
   <div style="margin-left: 40px;">
   <details>
     <summary> Introduction to Text Splitters ✅</summary>
