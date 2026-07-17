@@ -653,7 +653,7 @@
           <b>Theory:</b> Proprietary tools you build specifically for your organization (e.g., "RefundCustomerTool" or "UpdateCRMTool") representing your unique business logic.
         </div>
       </details>
-      </dl></dd>
+      </dd></dl>
     </div>
   </details>
   <br>
