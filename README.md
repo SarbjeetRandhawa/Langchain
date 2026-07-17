@@ -691,6 +691,9 @@
     </div>
   </details>
   </dd></dl>
+
+  <img width="693" height="438" alt="image" src="https://github.com/user-attachments/assets/6faaa868-6b06-4a28-bc3e-e40a15b7e2a0" />
+
 </details>
 
 - ➡️ Phase 14 - Agents
