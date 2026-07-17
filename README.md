@@ -571,7 +571,104 @@
   </dd></dl>
 </details>
 
-- ➡️ Phase 13 - Tools
+<details>
+  <summary>✅ Phase 13 - Tools</summary>
+  <br>
+  &nbsp;&nbsp;&nbsp; &bull; What is a Tool?<br>
+  &nbsp;&nbsp;&nbsp; &bull; Tool Calling vs Function Calling<br>
+  <dl><dd>
+  <details>
+    <summary> Types of Tools</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      <dl><dd>
+      <details>
+        <summary> Utility Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Generic, helpful functions like calculators, current time fetchers, or random number generators that assist the LLM in performing deterministic operations.
+        </div>
+      </details>
+      <details>
+        <summary> Retrieval Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Tools that fetch context from a knowledge base or vector store. Often used in RAG to grab chunks of relevant private data before generating a final answer.
+        </div>
+      </details>
+      <details>
+        <summary> Search Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Web search integrations (e.g., Google Search, DuckDuckGo, Tavily) that allow the LLM to pull real-time or up-to-date information from the internet.
+        </div>
+      </details>
+      <details>
+        <summary> API Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Interfaces that connect the LLM to external REST or GraphQL APIs (e.g., weather services, stock tickers, or GitHub) to read or write external data.
+        </div>
+      </details>
+      <details>
+        <summary> Database Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Tools that enable the LLM to query structured databases directly (like SQL or Neo4j). The LLM usually writes the query and the tool executes it.
+        </div>
+      </details>
+      <details>
+        <summary> File System Tools ⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Allows the LLM to read from, write to, or list files in a local or remote file system. Great for coding assistants or data analysis agents.
+        </div>
+      </details>
+      <details>
+        <summary> Code Execution Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Safe sandbox environments (like a Python REPL or E2B) where the LLM can write code, run it, and see the output to solve complex math or data problems dynamically.
+        </div>
+      </details>
+      <details>
+        <summary> Communication Tools ⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Tools used to send emails, Slack messages, or SMS. These give the agent the ability to act on the user's behalf to notify others.
+        </div>
+      </details>
+      <details>
+        <summary> Human-in-the-Loop Tools ⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Special tools that pause execution to ask a human for approval, feedback, or missing information before proceeding with high-stakes actions.
+        </div>
+      </details>
+      <details>
+        <summary> AI/ML Tools ⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Tools that call other AI models (e.g., passing an image to an OCR model, or using a local classifier) to handle tasks the primary LLM can't do natively.
+        </div>
+      </details>
+      <details>
+        <summary> Workflow Tools ⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Integrations with automation platforms like Zapier or Make, allowing the LLM to trigger complex, multi-step business workflows.
+        </div>
+      </details>
+      <details>
+        <summary> Custom Business Tools ⭐⭐⭐⭐⭐</summary>
+        <div style="margin-top: 5px; margin-bottom: 10px;">
+          <b>Theory:</b> Proprietary tools you build specifically for your organization (e.g., "RefundCustomerTool" or "UpdateCRMTool") representing your unique business logic.
+        </div>
+      </details>
+      </dl></dd>
+    </div>
+  </details>
+  </dd></dl>
+  &nbsp;&nbsp;&nbsp; &bull; Built-in LangChain Tools<br>
+  &nbsp;&nbsp;&nbsp; &bull; Creating Custom Tools<br>
+  &nbsp;&nbsp;&nbsp; &bull; @tool Decorator<br>
+  &nbsp;&nbsp;&nbsp; &bull; StructuredTool<br>
+  &nbsp;&nbsp;&nbsp; &bull; BaseTool<br>
+  &nbsp;&nbsp;&nbsp; &bull; Tool Schemas (Pydantic)<br>
+  &nbsp;&nbsp;&nbsp; &bull; Tool Execution Flow<br>
+  &nbsp;&nbsp;&nbsp; &bull; Tool Errors & Validation<br>
+  &nbsp;&nbsp;&nbsp; &bull; Toolkits<br>
+  &nbsp;&nbsp;&nbsp; &bull; Tool Calling with LCEL<br>
+  &nbsp;&nbsp;&nbsp; &bull; Tool Calling with LangGraph<br>
+</details>
 - ➡️ Phase 14 - Agents
 - ➡️ Phase 15 - Callbacks
 - ➡️ Phase 16 - LangSmith & Production
