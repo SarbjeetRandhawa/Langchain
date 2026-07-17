@@ -42,6 +42,34 @@ file_toolkit = FileManagementToolkit(
 tools = file_toolkit.get_tools()
 
 # ---------------------------------------------------------
+# 3. Using Toolkits with LCEL (LangChain Expression Language)
+# ---------------------------------------------------------
+# In modern LangChain, you bind the extracted tools directly to a 
+# Chat Model using LCEL.
+
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+import os
+
+# Dummy key to prevent initialization crash if not set
+if "OPENAI_API_KEY" not in os.environ:
+    os.environ["OPENAI_API_KEY"] = "dummy-key"
+
+llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+
+# Bind the tools to the LLM
+llm_with_tools = llm.bind_tools(tools)
+
+# Create a standard LCEL prompt
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful assistant with access to a file system. Use your tools to manage files."),
+    ("human", "{input}")
+])
+
+# Build the LCEL Chain
+lcel_chain = prompt | llm_with_tools
+
+# ---------------------------------------------------------
 # Example Output
 # ---------------------------------------------------------
 if __name__ == "__main__":
@@ -55,7 +83,8 @@ if __name__ == "__main__":
         print(f"Description: {tool.description.splitlines()[0]}") 
         print("-" * 60)
         
-    print("\nHow to use with an Agent:")
-    print("tools = file_toolkit.get_tools()")
-    print("agent = create_tool_calling_agent(llm, tools, prompt)")
-    print("agent_executor = AgentExecutor(agent=agent, tools=tools)")
+    print("\nHow it works in LCEL:")
+    print("1. We extracted the tools: `tools = file_toolkit.get_tools()`")
+    print("2. We bound them to the LLM: `llm_with_tools = llm.bind_tools(tools)`")
+    print("3. We built the chain: `lcel_chain = prompt | llm_with_tools`")
+    print("\nIf you invoke this chain (requires valid OpenAI key), the LLM will output 'tool_calls' instead of raw text!")
