@@ -574,9 +574,9 @@
 <details>
   <summary>✅ Phase 13 - Tools</summary>
   <br>
-  &nbsp;&nbsp;&nbsp; &bull; What is a Tool?<br>
-  &nbsp;&nbsp;&nbsp; &bull; Tool Calling vs Function Calling<br>
   <dl><dd>
+  &bull; What is a Tool?<br>
+  &bull; Tool Calling vs Function Calling<br><br>
   <details>
     <summary> Types of Tools</summary>
     <div style="margin-top: 5px; margin-bottom: 10px;">
@@ -656,19 +656,33 @@
       </dl></dd>
     </div>
   </details>
+  <br>
+  &bull; Built-in LangChain Tools<br>
+  &bull; Creating Custom Tools<br>
+  &bull; @tool Decorator<br>
+  &bull; StructuredTool<br>
+  &bull; BaseTool<br>
+  &bull; Tool Schemas (Pydantic)<br>
+  &bull; Tool Execution Flow<br>
+  <details>
+    <summary> Tool Errors & Validation</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px; margin-left: 20px;">
+      &bull; Input Validation<br>
+      &bull; Runtime Errors<br>
+      &bull; API Errors<br>
+      &bull; Network Errors<br>
+      &bull; Authentication Errors<br>
+      &bull; Timeout Errors<br>
+      &bull; Permission Errors<br>
+      &bull; Unexpected Exceptions<br>
+    </div>
+  </details>
+  &bull; Toolkits<br>
+  &bull; Tool Calling with LCEL<br>
+  &bull; Tool Calling with LangGraph<br>
   </dd></dl>
-  &nbsp;&nbsp;&nbsp; &bull; Built-in LangChain Tools<br>
-  &nbsp;&nbsp;&nbsp; &bull; Creating Custom Tools<br>
-  &nbsp;&nbsp;&nbsp; &bull; @tool Decorator<br>
-  &nbsp;&nbsp;&nbsp; &bull; StructuredTool<br>
-  &nbsp;&nbsp;&nbsp; &bull; BaseTool<br>
-  &nbsp;&nbsp;&nbsp; &bull; Tool Schemas (Pydantic)<br>
-  &nbsp;&nbsp;&nbsp; &bull; Tool Execution Flow<br>
-  &nbsp;&nbsp;&nbsp; &bull; Tool Errors & Validation<br>
-  &nbsp;&nbsp;&nbsp; &bull; Toolkits<br>
-  &nbsp;&nbsp;&nbsp; &bull; Tool Calling with LCEL<br>
-  &nbsp;&nbsp;&nbsp; &bull; Tool Calling with LangGraph<br>
 </details>
+
 - ➡️ Phase 14 - Agents
 - ➡️ Phase 15 - Callbacks
 - ➡️ Phase 16 - LangSmith & Production
