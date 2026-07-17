@@ -679,7 +679,17 @@
   </details>
   &bull; Toolkits<br>
   &bull; Tool Calling with LCEL<br>
-  &bull; Tool Calling with LangGraph<br>
+  <details>
+    <summary> Tool Calling with LangGraph</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px; margin-left: 20px;">
+      <b>Graph Components:</b> Every LangGraph application has a Graph consisting of:<br>
+      &bull; State<br>
+      &bull; Nodes<br>
+      &bull; Edges<br>
+      &bull; Conditional Edges<br>
+      &bull; START / END<br>
+    </div>
+  </details>
   </dd></dl>
 </details>
 

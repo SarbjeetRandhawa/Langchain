@@ -5,7 +5,7 @@ This script demonstrates how to create:
 2. Structured custom tools with multiple parameters using Pydantic and StructuredTool.
 """
 
-from langchain.tools import tool, StructuredTool
+from langchain_core.tools import tool, StructuredTool
 from pydantic import BaseModel, Field
 
 # ---------------------------------------------------------
