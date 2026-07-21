@@ -835,6 +835,64 @@ Agent
 
   </dd></dl>
 </details>
-- ➡️ Phase 15 - Callbacks
-- ➡️ Phase 16 - LangSmith & Production
-- ➡️ Phase 17 - Build an end-to-end production RAG system
+<details>
+  <summary>✅ Phase 15 - Callbacks & Observability</summary>
+  <br>
+  <dl><dd>
+  &bull; What are Callbacks?<br>
+  &bull; Callback Lifecycle<br>
+  &bull; CallbackManager<br>
+  &bull; Built-in Callback Handlers<br>
+  &bull; Custom Callback Handlers<br>
+  &bull; Streaming Tokens<br>
+  &bull; Tracking Token Usage & Cost<br>
+  &bull; Logging Tool Calls<br>
+  &bull; Debugging Chains & Agents<br>
+  &bull; Async Callbacks<br>
+  &bull; LangSmith Tracing<br>
+  &bull; Production Monitoring<br>
+  </dd></dl>
+</details>
+- ➡️ Phase 16 - LangSmith
+<details>
+  <summary>✅ Phase 17 - MCP (Model Context Protocol)</summary>
+  <br>
+  <dl><dd>
+  &bull; What is MCP?<br>
+  &bull; MCP Architecture<br>
+  <details>
+    <summary> MCP Client</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+<pre>
+              AI Application
+                     │
+             MCP Client Layer
+ ┌────────────────────────────────────┐
+ │ Connection Manager                 │
+ │ Capability Discovery               │
+ │ Tool Executor                      │
+ │ Resource Reader                    │
+ │ Prompt Loader                      │
+ │ Response Parser                    │
+ │ Error Handler                      │
+ └────────────────────────────────────┘
+                     │
+              MCP Protocol
+                     │
+                MCP Server
+</pre>
+    </div>
+  </details>
+  &bull; MCP Server<br>
+  &bull; Resources<br>
+  &bull; Tools<br>
+  &bull; Prompts<br>
+  &bull; Transport (stdio, HTTP, SSE)<br>
+  &bull; Authentication & Security<br>
+  &bull; Building an MCP Server<br>
+  &bull; Connecting LangGraph to MCP<br>
+  &bull; Enterprise MCP Design<br>
+  </dd></dl>
+</details>
+
+
