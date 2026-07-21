@@ -696,7 +696,145 @@
 
 </details>
 
-- ➡️ Phase 14 - Agents
+<details>
+  <summary>✅ Phase 14 - Agents</summary>
+  <br>
+  <dl><dd>
+
+  <details>
+    <summary> What is an Agent?</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      An agent uses an LLM as a reasoning engine to determine which actions to take and in what order. Unlike traditional chains with hardcoded paths, agents adaptively choose tools based on the user's input.
+    </div>
+  </details>
+
+  <details>
+    <summary> LLMChain vs Chain vs Agent</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      &bull; <b>LLMChain:</b> A simple prompt + LLM combination.<br>
+      &bull; <b>Chain:</b> A sequence of deterministic, predefined steps.<br>
+      &bull; <b>Agent:</b> Non-deterministic routing where the LLM decides the workflow and tool execution dynamically.
+    </div>
+  </details>
+
+  <details>
+    <summary> Agent Architecture</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      Core components include the <b>LLM</b> (brain), <b>Tools</b> (actions), <b>Memory</b> (context), and <b>Prompt/Persona</b> (instructions). The architecture defines how the agent observes, thinks, and acts.
+<pre>
+Agent
+├── LLM ⭐⭐⭐⭐⭐
+├── Prompt
+├── Memory
+├── State ⭐⭐⭐⭐⭐
+│   ├── Messages
+│   ├── Tool Results
+│   ├── Variables
+│   ├── User Profile
+│   ├── Retrieved Documents
+│   ├── Intermediate Steps
+│   └── Current Plan
+├── Tools ⭐⭐⭐⭐⭐
+├── Reasoning Loop ⭐⭐⭐⭐⭐
+├── Output Parser
+└── Stopping Condition ⭐⭐⭐⭐⭐
+</pre>
+    </div>
+  </details>
+
+  <details>
+    <summary> ReAct Pattern</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      ReAct (Reasoning and Acting) is a popular framework where the agent explicitly writes out its "Thought", followed by an "Action" (tool call), and then receives an "Observation" from the tool, looping until it arrives at a final answer.
+    </div>
+  </details>
+
+  <details>
+    <summary> AgentExecutor (Legacy)</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      LangChain's older runtime environment for agents. It handles the while loop of calling the agent, parsing the output, executing tools, and feeding results back. It is now largely superseded by LangGraph.
+    </div>
+  </details>
+
+  <details>
+    <summary> create_react_agent</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      A helper function to quickly initialize an agent using the ReAct prompting strategy. It binds the LLM, the tools, and the ReAct prompt together.
+    </div>
+  </details>
+
+  <details>
+    <summary> Tool Selection Logic</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      How the LLM decides which tool to use. This heavily relies on high-quality tool names and descriptions, as the LLM evaluates these descriptions against the current task context to pick the best action.
+    </div>
+  </details>
+
+  <details>
+    <summary> Planning & Reasoning</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      Advanced agents can formulate a multi-step plan before taking action (e.g., Plan-and-Solve). This helps break down complex goals into manageable tasks, reducing hallucinations and infinite loops.
+    </div>
+  </details>
+
+  <details>
+    <summary> Multi-step Reasoning</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      The ability of an agent to retain context across multiple tool calls to solve a single complex query, analyzing intermediate results to inform the next step.
+    </div>
+  </details>
+
+  <details>
+    <summary> Multi-Agent Systems</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      Systems where multiple specialized agents communicate and collaborate to solve a task. Each agent acts as a domain expert, delegating sub-tasks to others.
+    </div>
+  </details>
+
+  <details>
+    <summary> Supervisor Pattern</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      A specific multi-agent architecture where a "Supervisor" LLM acts as a router or manager, evaluating the task and delegating it to specific "Worker" agents, then synthesizing their responses.
+    </div>
+  </details>
+
+  <details>
+    <summary> Handoffs Between Agents</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      The process of transferring control and context from one agent to another. Crucial in multi-agent workflows for ensuring that the new agent has all the necessary background to continue the task.
+    </div>
+  </details>
+
+  <details>
+    <summary> Human-in-the-Loop</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      Adding approval or feedback steps where a human validates the agent's proposed plan or tool call before execution. Vital for high-stakes or destructive tools.
+    </div>
+  </details>
+
+  <details>
+    <summary> Agent Failure Modes</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      Common issues like infinite loops (repeating the same failed action), hallucinated tool arguments, context window overflow, or failing to parse the final answer correctly.
+    </div>
+  </details>
+
+  <details>
+    <summary> Production Agent Design</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      Best practices for deploying agents reliably, including error handling, retries, fallback models, strict prompt formatting, telemetry, and rate-limit management.
+    </div>
+  </details>
+
+  <details>
+    <summary> LangGraph Agents (Modern Approach)</summary>
+    <div style="margin-top: 5px; margin-bottom: 10px;">
+      The state-of-the-art framework for building agents in LangChain. It models agent workflows as graphs (nodes and edges), providing fine-grained control over state, cyclic execution, streaming, and human-in-the-loop features.
+    </div>
+  </details>
+
+  </dd></dl>
+</details>
 - ➡️ Phase 15 - Callbacks
 - ➡️ Phase 16 - LangSmith & Production
 - ➡️ Phase 17 - Build an end-to-end production RAG system
